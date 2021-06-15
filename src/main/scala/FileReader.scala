@@ -4,7 +4,7 @@ import java.io.File
 object FileReader {
 
   private def extensionFilter(f: File): Boolean =
-    f.getName.contains(".jpg") || f.getName.contains(".png")
+    f.getName.contains(".jpg") || f.getName.contains(".png") || f.getName.contains(".jpeg")
 
 
   private def getListOfFiles(dir: String):List[File] = {
@@ -20,5 +20,5 @@ object FileReader {
     val pics = getListOfFiles(path)
     pics.map(_.getPath)
   }
-  
+
 }

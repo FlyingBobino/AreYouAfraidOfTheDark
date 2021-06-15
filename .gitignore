@@ -1,6 +1,9 @@
 # intellij
-/.idea
-/.bsp
+.idea
+.bsp
+
+target
+*.class
 
 # sbt
 /project/

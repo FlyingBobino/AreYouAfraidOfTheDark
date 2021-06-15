@@ -1,4 +1,5 @@
 import java.io.File
+import scala.collection.parallel.CollectionConverters._
 
 object App {
   def main(args: Array[String]): Unit = {
@@ -11,17 +12,17 @@ object App {
       def normalising((val_brightness/val_pefectly_white(255))*100-100)
       3b if brightness > cut off: concatenate name pic + dark.png, else + bright.png
       3c rename picture file name by concatenating to pic_dark/bright_brightness.png
-
      */
-    val brightFolder = FileReader.getFileNames("C:\\Users\\ziolk\\Desktop\\New folder\\photos\\bright")
-    val darkFolder = FileReader.getFileNames("C:\\Users\\ziolk\\Desktop\\New folder\\photos\\too_dark")
 
-    brightFolder.foreach(calculateAndSave)
-    println("Dupaaaaa")
-    darkFolder.foreach(calculateAndSave)
+
+    val Folder = FileReader.getFileNames("pics")
+
+    Folder.par.foreach(calculateAndSave)
+    println("Something Less Rated M'y")
+
+
+
   }
-
-
 
   def calculateAndSave(picturePath: String): Unit = {
     val cutOff: Int = 75
@@ -40,3 +41,4 @@ object App {
   }
 
 }
+

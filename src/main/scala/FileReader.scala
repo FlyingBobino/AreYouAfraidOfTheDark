@@ -20,5 +20,5 @@ object FileReader {
     val pics = getListOfFiles(path)
     pics.map(_.getPath)
   }
-
+  
 }

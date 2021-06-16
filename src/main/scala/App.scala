@@ -1,5 +1,7 @@
 import java.io.File
+import javax.imageio.ImageIO
 import scala.collection.parallel.CollectionConverters._
+
 
 object App {
   def main(args: Array[String]): Unit = {
@@ -38,7 +40,13 @@ object App {
         name + "_bright_" + brightness + "." + extension
 
     println(newName)
+    val newPicture = FolderCleaner.copyPicture(picturePath)
+    ImageIO.write(newPicture, extension, new File("out\\" + newName))
+
   }
+
+
+
 
 }
 

@@ -7,7 +7,7 @@ object App {
   def main(args: Array[String]): Unit = {
 
     val sourceFolderDir = "pics"
-    val destFolderDir   = "out"
+    val destFolderDir   = "destination"
 
     FileManager.deleteFolderContents(destFolderDir)
     // comment out line above if you want to retain pictures from previous runs

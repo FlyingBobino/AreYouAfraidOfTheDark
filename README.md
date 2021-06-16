@@ -11,14 +11,14 @@ All contents of the problem are at the bottom of this file.
 ## Usage
 
 User can run the programme without any changes using the provided example set: the pictures from "pics" 
-folder will be amended and saved in the "out" folder. 
+folder will be amended and saved in the "destination" folder. 
 
 To use it on the new set user must provide in the App object a directory of the source folder, from which 
 pictures are obtained, and destination folder, to which amended files are saved:
 
 ```scala
 val sourceFolderDir = "pics"  
-val destFolderDir   = "out"
+val destFolderDir   = "destination"
 ```
 
 If the folders are outside the project folder, full directory must be provided e.g., "C:\UserName\FolderName"

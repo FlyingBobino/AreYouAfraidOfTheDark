@@ -36,7 +36,7 @@ f.getName.contains(".png") || f.getName.contains(s".$extensionName")
 ```
 
 
-Recommended cut off value: 80 
+Recommended cut off value: 80                                                                                       |
 It is based on the outcomes from the test set - 100% accuracy and seemingly the best generalisation ability.
 
 Script deletes the pictures from the destination folder between runs - to avoid it, user should comment out the 12th

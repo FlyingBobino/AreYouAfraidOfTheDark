@@ -2,7 +2,6 @@ import java.io.File
 import javax.imageio.ImageIO
 import scala.collection.parallel.CollectionConverters._
 
-
 object App {
   def main(args: Array[String]): Unit = {
     /*
@@ -16,22 +15,19 @@ object App {
       3c rename picture file name by concatenating to pic_dark/bright_brightness.png
      */
 
+    val folder = FileManager.getFileNames("pics")
 
-    val Folder = FileReader.getFileNames("pics")
-
-    Folder.par.foreach(calculateAndSave)
+    folder.par.foreach(calculateAndSave)
     println("Something Less Rated M'y")
-
-
 
   }
 
   def calculateAndSave(picturePath: String): Unit = {
-    val cutOff: Int = 75
-    val fileName: String = picturePath.split("""\\""").reverse.head
-    val name: String = fileName.split("\\.").head
+    val cutOff: Int       = 75
+    val fileName: String  = picturePath.split("""\\""").reverse.head
+    val name: String      = fileName.split("\\.").head
     val extension: String = fileName.split("\\.")(1)
-    val brightness = BrightnessCalculator.getBrightness(picturePath)
+    val brightness        = BrightnessCalculator.getBrightness(picturePath)
 
     val newName =
       if (brightness >= cutOff)
@@ -40,14 +36,10 @@ object App {
         name + "_bright_" + brightness + "." + extension
 
     println(newName)
-    val newPicture = FolderCleaner.copyPicture(picturePath)
+    val newPicture = FileManager.copyPicture(picturePath)
 
     ImageIO.write(newPicture, extension, new File("out\\" + newName))
 
   }
 
-
-
-
 }
-

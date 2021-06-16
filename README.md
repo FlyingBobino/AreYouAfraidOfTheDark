@@ -9,3 +9,9 @@ def normalising((val_brightness/val_perfectly_white(255))*100-100)
 3c rename picture file name by concatenating to pic_dark/bright_brightness.png
 */
    app
+
+
+* script only assesses pictures with .jpg, .jpeg and .png formats
+   *
+   * cutOff value is compared with brightness: if brightness < cutOff the image name is amended with _bright_brightness
+   * and _dark_brightness otherwise

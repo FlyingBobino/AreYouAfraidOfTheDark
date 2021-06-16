@@ -4,12 +4,10 @@ import javax.imageio.ImageIO
 
 object FileManager extends App {
 
-  val folderDirectory = "C:\\Users\\ziolk\\IdeaProjects\\AreYouAfraidOfTheDarkSBT\\out"
-
   private def extensionFilter(f: File): Boolean =
     f.getName.contains(".jpg") || f.getName.contains(".png") || f.getName.contains(".jpeg")
 
-  def getListOfFiles(dir: String): List[File] = {
+  private def getListOfFiles(dir: String): List[File] = {
     val d = new File(dir)
     if (d.exists && d.isDirectory) {
       d.listFiles.filter(file => file.isFile && extensionFilter(file)).toList
@@ -43,6 +41,4 @@ object FileManager extends App {
 
     newPicture
   }
-
-  deleteFolderContents(folderDirectory)
 }

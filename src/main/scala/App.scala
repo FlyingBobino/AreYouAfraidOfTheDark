@@ -41,6 +41,7 @@ object App {
 
     println(newName)
     val newPicture = FolderCleaner.copyPicture(picturePath)
+
     ImageIO.write(newPicture, extension, new File("out\\" + newName))
 
   }

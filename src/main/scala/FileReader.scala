@@ -7,7 +7,7 @@ object FileReader {
     f.getName.contains(".jpg") || f.getName.contains(".png") || f.getName.contains(".jpeg")
 
 
-  private def getListOfFiles(dir: String):List[File] = {
+  def getListOfFiles(dir: String):List[File] = {
     val d = new File(dir)
     if (d.exists && d.isDirectory) {
       d.listFiles.filter(file => file.isFile && extensionFilter(file)).toList
